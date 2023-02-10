@@ -16,13 +16,13 @@ function clicker() {
     }
     display();
 }
-async function display() {
+async function display(secon) {
     try {
         count = localStorage.getItem("gaby")
         if (parseInt(count) > 999999) {
-            document.getElementById('gabycounter').innerHTML = (count / 1000000).toFixed(2) + " Mi Gaby Coins";
+            document.getElementById('gabycounter').innerHTML = (count / 1000000).toFixed(2) + " Mi Gaby Coins (revenue :" + secon + "/s)";
         } else {
-            document.getElementById('gabycounter').innerHTML = count + " Gaby Coins";
+            document.getElementById('gabycounter').innerHTML = count + " Gaby Coins (revenue :" + secon + "/s)";
         }
     } catch (err) {
         console.log(err);
@@ -85,6 +85,7 @@ async function farm() {
 
 
             let keys = Object.keys(localStorage);
+            let secon = 0
             for (let i = 0; i < keys.length; i++) {
                 let nb = localStorage.getItem("gaby");
                 let key = keys[i];
@@ -100,6 +101,7 @@ async function farm() {
                     let revenue = localStorage.getItem(substring[0] + 'Revenue');
                     if (farm != null) {
                         localStorage.setItem("gaby", (parseInt(nb) + parseInt(farm) * parseInt(revenue)/100));
+                         secon +=  parseInt(farm) * parseInt(revenue);
                     }
                     if(localStorage.getItem("gaby")>1000000){
                         document.getElementById('imgGaby').src = "img/gaby.jpeg";
@@ -110,7 +112,8 @@ async function farm() {
                     displayFarm(substring[0]);
                 }
             }
-            display();
+
+            display(secon);
             await delay(10);
         }
     } catch (err) {
