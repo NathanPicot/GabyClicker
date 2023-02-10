@@ -39,24 +39,22 @@ function addFarm(name, Oneprice) {
     try {
         let nb = localStorage.getItem(name + 'Farm');
         localStorage.setItem(name + 'Revenue', Oneprice * 0.5);
-        let nb1 = 1;
-        if (nb < 1) {
 
-             nb1 = 1;
-        }else{
-             nb1 = nb;
+        if (nb < 1) {
+            nb = 1
         }
         if (localStorage.getItem(name + "Factor") == null) {
             factor(1, name);
         }
         let fact = parseInt(localStorage.getItem(name + 'Factor'));
-        let price = nb1 *15* Oneprice * fact;
+        let price = parseInt(nb) *15* Oneprice * fact;
         if (localStorage.getItem("gaby") >= price) {
             localStorage.setItem("gaby", parseInt(localStorage.getItem("gaby")) - price);
-            if (nb1 == null) {
+            if ( localStorage.getItem(name+'First') != 1) {
                 localStorage.setItem(name + 'Farm', fact);
+                localStorage.setItem(name+'First', 1)
             } else {
-                localStorage.setItem(name + 'Farm', fact + parseInt(nb1));
+                localStorage.setItem(name + 'Farm', fact + parseInt(nb));
             }
         }
         document.getElementById(name).innerHTML = "Add " + name + " ( " + price + " gaby Coin) ";
@@ -104,7 +102,7 @@ async function farm() {
                     document.getElementById(substring[0]).innerHTML = "Add " + substring[0] + " ( " + price + " gaby Coin) ";
                     let revenue = localStorage.getItem(substring[0] + 'Revenue');
                     if (farm != null) {
-                        localStorage.setItem("gaby", (parseInt(nb) + parseInt(farm) * parseInt(revenue)/100));
+                        localStorage.setItem("gaby", (parseInt(nb) + parseInt(farm) * parseInt(revenue)/10));
                          secon +=  parseInt(farm) * parseInt(revenue);
                     }
                     if(localStorage.getItem("gaby")>1000000){
@@ -118,7 +116,7 @@ async function farm() {
             }
 
             display(secon);
-            await delay(10);
+            await delay(100);
         }
     } catch (err) {
         console.log(err);
