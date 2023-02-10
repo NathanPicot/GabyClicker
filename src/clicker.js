@@ -14,7 +14,7 @@ function clicker() {
     } else {
         localStorage.setItem("gaby", 10 + parseInt(nb));
     }
-    display();
+
 }
 async function display(secon) {
     try {
