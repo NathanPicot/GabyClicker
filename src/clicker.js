@@ -82,6 +82,8 @@ async function farm() {
 
     try {
         while (true) {
+
+
             let keys = Object.keys(localStorage);
             for (let i = 0; i < keys.length; i++) {
                 let nb = localStorage.getItem("gaby");
@@ -99,6 +101,12 @@ async function farm() {
                     if (farm != null) {
                         localStorage.setItem("gaby", (parseInt(nb) + parseInt(farm) * parseInt(revenue)/100));
                     }
+                    if(localStorage.getItem("gaby")>1000000){
+                        document.getElementById('imgGaby').src = "img/gaby.jpeg";
+                    }else{
+                        document.getElementById('imgGaby').src = "img/gaby1.jpeg";
+                    }
+
                     displayFarm(substring[0]);
                 }
             }
