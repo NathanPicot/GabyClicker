@@ -46,7 +46,7 @@ function addFarm(name, Oneprice) {
             factor(1, name);
         }
         let fact = parseInt(localStorage.getItem(name + 'Factor'));
-        let price = nb * Oneprice * fact;
+        let price = nb *15* Oneprice * fact;
         if (localStorage.getItem("gaby") >= price) {
             localStorage.setItem("gaby", parseInt(localStorage.getItem("gaby")) - price);
             if (nb == null) {
@@ -90,7 +90,7 @@ async function farm() {
                     let farm = localStorage.getItem(key);
                     let separator = 'Farm';
                     const substring = key.split(separator);
-                    let price = parseInt(localStorage.getItem(substring[0] + 'Farm')) * parseInt(localStorage.getItem(substring[0] + 'Revenue')) * 2 * parseInt(localStorage.getItem(substring[0] + 'Factor'));
+                    let price = parseInt(localStorage.getItem(substring[0] + 'Farm')) * parseInt(localStorage.getItem(substring[0] + 'Revenue')) *15* 2 * parseInt(localStorage.getItem(substring[0] + 'Factor'));
                     if (price > 999999) {
                         price = (price / 1000000).toFixed(2) + "Mi"
                     }
