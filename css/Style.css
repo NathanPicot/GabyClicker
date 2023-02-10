@@ -1,0 +1,20 @@
+
+.click-zone{
+    height: 1024px;
+    overflow: visible;
+    cursor: url("../img/cursor.png"), auto;
+
+}
+
+.purchase{
+    margin: 10px;
+}
+
+.gabybtn {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.gabybtn:active {
+    transform: scale(0.9) !important;
+}

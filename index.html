@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="css/Style.css" rel="stylesheet">
+</head>
+<body onload="farm()">
+
+<div class="row div-principal">
+    <div class="bg-secondary col click-zone">
+        <div>
+            <label>Click Zone</label>
+        </div>
+        <div>
+            <label id="gabycounter">00000.00</label>
+        </div>
+        <div>
+            <btn onclick="clicker()" id="gabybtn">
+                <img src="img/gaby.jpeg" width="500px">
+            </btn>
+        </div >
+
+    </div>
+    <div class="bg-primary col">
+        <label>Farm Zone</label>
+        <div class="purchase">
+            <btn class="btn btn-secondary" onclick="addFarm('vodka',100)" id="vodka">
+                Add Farm (10 gaby Coin)
+
+            </btn>
+            <btn class="btn btn-secondary" id="vodka1" onclick="factor(1,'vodka'); btnSelect('vodka', 1)" >
+                x1
+            </btn>
+            <btn class="btn btn-secondary" id="vodka10" onclick="factor(10, 'vodka'); btnSelect('vodka', 10)" >
+                x10
+            </btn>
+            <btn class="btn btn-secondary" id="vodka100" onclick="factor(100,'vodka'); btnSelect('vodka',100)" >
+                x100
+            </btn>
+            <div>
+                <label id="vodkaNb">
+
+                </label>
+            </div>
+        </div>
+
+        <div class="purchase">
+            <btn class="btn btn-secondary" onclick="addFarm('jack',10000)" id="jack">
+                Add Farm (10 gaby Coin)
+
+            </btn>
+
+            <btn class="btn btn-secondary" id="jack1" onclick="factor(1,'jack'); btnSelect('jack' ,1)" >
+                x1
+            </btn>
+            <btn class="btn btn-secondary" id="jack10" onclick="factor(10, 'jack'); btnSelect('jack', 10)" >
+                x10
+            </btn>
+            <btn class="btn btn-secondary" id="jack100" onclick="factor(100,'jack'); btnSelect('jack', 100)" >
+                x100
+            </btn>
+            <div>
+                <label id="jackNb">
+
+                </label>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script src="src/clicker.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
