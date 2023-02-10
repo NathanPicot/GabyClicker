@@ -39,20 +39,24 @@ function addFarm(name, Oneprice) {
     try {
         let nb = localStorage.getItem(name + 'Farm');
         localStorage.setItem(name + 'Revenue', Oneprice * 0.5);
+        let nb1 = 1;
         if (nb < 1) {
-            nb = 1;
+
+             nb1 = 1;
+        }else{
+             nb1 = nb;
         }
         if (localStorage.getItem(name + "Factor") == null) {
             factor(1, name);
         }
         let fact = parseInt(localStorage.getItem(name + 'Factor'));
-        let price = nb *15* Oneprice * fact;
+        let price = nb1 *15* Oneprice * fact;
         if (localStorage.getItem("gaby") >= price) {
             localStorage.setItem("gaby", parseInt(localStorage.getItem("gaby")) - price);
-            if (nb == null) {
+            if (nb1 == null) {
                 localStorage.setItem(name + 'Farm', fact);
             } else {
-                localStorage.setItem(name + 'Farm', fact + parseInt(nb));
+                localStorage.setItem(name + 'Farm', fact + parseInt(nb1));
             }
         }
         document.getElementById(name).innerHTML = "Add " + name + " ( " + price + " gaby Coin) ";
