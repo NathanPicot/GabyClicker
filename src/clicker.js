@@ -56,7 +56,7 @@ function addFarm(name, Oneprice) {
             }
         }
         document.getElementById(name).innerHTML = "Add " + name + " ( " + price + " gaby Coin) ";
-        display();
+
     } catch (error) {
         console.log(error);
     }
@@ -97,13 +97,13 @@ async function farm() {
                     document.getElementById(substring[0]).innerHTML = "Add " + substring[0] + " ( " + price + " gaby Coin) ";
                     let revenue = localStorage.getItem(substring[0] + 'Revenue');
                     if (farm != null) {
-                        localStorage.setItem("gaby", parseInt(nb) + parseInt(farm) * parseInt(revenue));
+                        localStorage.setItem("gaby", (parseInt(nb) + parseInt(farm) * parseInt(revenue)/100));
                     }
                     displayFarm(substring[0]);
                 }
             }
             display();
-            await delay(1000);
+            await delay(10);
         }
     } catch (err) {
         console.log(err);
