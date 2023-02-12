@@ -13,20 +13,20 @@
 <div class="row div-principal">
     <div class="bg-secondary col click-zone">
         <div>
-            <label>Click Zone</label>
+            <h1 id="title">Gaby Clicker</h1>
         </div>
         <div>
             <label id="gabycounter">00000.00</label>
         </div>
         <div>
             <btn onclick="clicker()" id="gabybtn">
-                <img id="imgGaby" src="img/gaby1.jpeg" width="500px">
+                <img id="imgGaby" src="img/gaby1.jpeg">
             </btn>
         </div >
 
     </div>
     <div class="bg-primary col">
-        <label>Farm Zone</label>
+        <h1 id="farmZone">Farm Zone</h1>
         <div class="purchase">
             <btn class="btn btn-secondary" onclick="addFarm('vodka',100)" id="vodka">
                 Add Vodka (1500 gaby Coin)
@@ -65,6 +65,72 @@
             </btn>
             <div>
                 <label id="jackNb">
+
+                </label>
+            </div>
+        </div>
+
+        <div class="purchase">
+            <btn class="btn btn-secondary" onclick="addFarm('jet27',10000)" id="jet27">
+                Add jet27 (150000 gaby Coin)
+
+            </btn>
+
+            <btn class="btn btn-secondary" id="jet271" onclick="factor(1,'jet27'); btnSelect('jet27' ,1)" >
+                x1
+            </btn>
+            <btn class="btn btn-secondary" id="jet2710" onclick="factor(10, 'jet27'); btnSelect('jet27', 10)" >
+                x10
+            </btn>
+            <btn class="btn btn-secondary" id="jet27100" onclick="factor(100,'jet27'); btnSelect('jet27', 100)" >
+                x100
+            </btn>
+            <div>
+                <label id="jet27Nb">
+
+                </label>
+            </div>
+        </div>
+
+        <div class="purchase">
+            <btn class="btn btn-secondary" onclick="addFarm('goutte',100000)" id="goutte">
+                Add goutte (1500000 gaby Coin)
+
+            </btn>
+
+            <btn class="btn btn-secondary" id="goutte1" onclick="factor(1,'goutte'); btnSelect('goutte' ,1)" >
+                x1
+            </btn>
+            <btn class="btn btn-secondary" id="goutte10" onclick="factor(10, 'goutte'); btnSelect('goutte', 10)" >
+                x10
+            </btn>
+            <btn class="btn btn-secondary" id="goutte100" onclick="factor(100,'goutte'); btnSelect('goutte', 100)" >
+                x100
+            </btn>
+            <div>
+                <label id="goutteNb">
+
+                </label>
+            </div>
+        </div>
+
+        <div class="purchase">
+            <btn class="btn btn-secondary" onclick="addFarm('cimetiere',10000000)" id="cimetiere">
+                Add cimetiere (150000 gaby Coin)
+
+            </btn>
+
+            <btn class="btn btn-secondary" id="cimetiere1" onclick="factor(1,'cimetiere'); btnSelect('cimetiere' ,1)" >
+                x1
+            </btn>
+            <btn class="btn btn-secondary" id="cimetiere10" onclick="factor(10, 'cimetiere'); btnSelect('cimetiere', 10)" >
+                x10
+            </btn>
+            <btn class="btn btn-secondary" id="cimetiere100" onclick="factor(100,'cimetiere'); btnSelect('cimetiere', 100)" >
+                x100
+            </btn>
+            <div>
+                <label id="cimetiereNb">
 
                 </label>
             </div>

@@ -18,6 +18,9 @@ function clicker() {
 }
 async function display(secon) {
     try {
+        if (secon > 999999){
+            secon = (secon/1000000).toFixed(2) + " Mi";
+        }
         count = localStorage.getItem("gaby")
         if (parseInt(count) > 999999) {
             document.getElementById('gabycounter').innerHTML = (count / 1000000).toFixed(2) + " Mi Gaby Coins (revenue :" + secon + "/s)";
@@ -88,6 +91,12 @@ async function farm() {
 
             let keys = Object.keys(localStorage);
             let secon = 0
+            let delayms = 100;
+            let div = 10;
+            if (keys.length>13){
+                 delayms = 10;
+                 div = 100;
+            }
             for (let i = 0; i < keys.length; i++) {
                 let nb = localStorage.getItem("gaby");
                 let key = keys[i];
@@ -102,7 +111,7 @@ async function farm() {
                     document.getElementById(substring[0]).innerHTML = "Add " + substring[0] + " ( " + price + " gaby Coin) ";
                     let revenue = localStorage.getItem(substring[0] + 'Revenue');
                     if (farm != null) {
-                        localStorage.setItem("gaby", (parseInt(nb) + parseInt(farm) * parseInt(revenue)/10));
+                        localStorage.setItem("gaby", (parseInt(nb) + parseInt(farm) * parseInt(revenue)/div));
                          secon +=  parseInt(farm) * parseInt(revenue);
                     }
                     if(localStorage.getItem("gaby")>1000000){
@@ -116,7 +125,7 @@ async function farm() {
             }
 
             display(secon);
-            await delay(100);
+            await delay(delayms);
         }
     } catch (err) {
         console.log(err);

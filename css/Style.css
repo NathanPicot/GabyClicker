@@ -1,3 +1,25 @@
+#title{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#gabycounter{
+    margin-left: 27%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+#imgGaby{
+    margin-left: 30%;
+    width: 40%;
+    align-content: center;
+}
+
+#farmZone{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .click-zone{
     height: 1024px;
