@@ -102,7 +102,7 @@ async function farm() {
             let secon = 0
             let delayms = 100;
             let div = 10;
-            if (keys.length>13){
+            if (localStorage.getItem("vodkaFarm")>1){
                  delayms = 10;
                  div = 100;
             }
