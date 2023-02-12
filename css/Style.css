@@ -15,6 +15,24 @@
     align-content: center;
 }
 
+
+#imgGaby.clicked {
+    animation: click-animation 0.1s ease-in-out;
+}
+@keyframes click-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
 #farmZone{
     text-align: center;
     margin-top: 20px;

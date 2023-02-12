@@ -1,3 +1,12 @@
+const imgGaby = document.getElementById('imgGaby');
+imgGaby.addEventListener('click', function() {
+    imgGaby.classList.add('clicked');
+    setTimeout(() => {
+        imgGaby.classList.remove('clicked');
+    }, 500);
+});
+
+
 function delay(time) {
     return new Promise((resolve, reject) => {
         try {
