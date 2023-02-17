@@ -1,21 +1,57 @@
-#title{
-    margin-top: 20px;
+/* Global styles */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+    color: #36241e;
+    background-color: #f4e7d4;
+}
+
+/* Header */
+#title {
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
-#gabycounter{
-    margin-left: 27%;
-    margin-bottom: 30px;
-    margin-top: 10px;
+/* Counter */
+#gabycounter {
+
+    margin: auto;
+    margin-bottom: 20px;
+    width: 300px;
+    height: auto;
+    background-color: #f0c294;
+    border: 2px solid #b38f6c;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #5a483c;
+    text-shadow: 1px 1px #f6d7a6;
 }
 
-#imgGaby{
-    margin-left: 30%;
-    width: 40%;
-    align-content: center;
+/* Gaby Image */
+#imgGaby {
+    margin: 0 auto;
+    display: block;
+    width: 400px;
+    height: auto;
+    border: 5px solid #b38f6c;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #b38f6c;
 }
 
-
+/* Gaby Image Click Animation */
 #imgGaby.clicked {
     animation: click-animation 0.1s ease-in-out;
 }
@@ -31,30 +67,82 @@
     }
 }
 
-
-
-#farmZone{
+/* Farm Zone */
+#farmZone {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #fcecd1;
+    border: 2px solid #b38f6c;
+    border-radius: 5px;
+    padding: 10px;
 }
 
-.click-zone{
+/* Click Zone */
+.click-zone {
     height: 1024px;
     overflow: visible;
     cursor: url("../img/cursor.png"), auto;
-
+    background-color: #f8d6a4;
 }
 
-.purchase{
-    margin: 10px;
+/* Purchase Buttons */
+.purchase {
+    margin: 20px;
 }
 
-.gabybtn {
+.button {
     cursor: pointer;
-    transition: all 0.3s ease-in-out !important;
+    transition: all 0.3s ease-in-out;
+    background-color: #b38f6c;
+    color: #f4e7d4;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+
+    margin-left: 5px;
+
+    text-shadow: 1px 1px #5a483c;
 }
 
-.gabybtn:active {
-    transform: scale(0.9) !important;
+.button:active {
+    transform: scale(0.9);
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+    #title {
+        font-size: 1.5rem;
+    }
+
+    #imgGaby {
+        width: 80%;
+    }
+
+    #farmZone {
+        font-size: 1rem;
+    }
+
+    .gabybtn.button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .farmZone {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .click-zone {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 160px); /* 160px = total margin and padding of farmZone */
+    }
 }
