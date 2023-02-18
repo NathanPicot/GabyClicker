@@ -106,6 +106,10 @@ body {
     text-shadow: 1px 1px #5a483c;
 }
 
+.active{
+    background-color: #75481c;
+}
+
 .button:active {
     transform: scale(0.9);
 }
